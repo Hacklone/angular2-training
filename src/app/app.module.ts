@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RobotCardComponent } from './robots/robot-card/robot-card.component';
 import { RobotListComponent } from './robots/robot-list/robot-list.component';
+import {RobotListService} from "./robots/shared/services/robot-list.service";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { RobotListComponent } from './robots/robot-list/robot-list.component';
     CommonModule,
     FormsModule
   ],
-  providers: [],
+  providers: [RobotListService],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

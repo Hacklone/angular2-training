@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Robot} from "../shared/models/robot.interface";
+import {RobotListService} from "../shared/services/robot-list.service";
 
 @Component({
   selector: 'app-robot-list',
@@ -7,17 +8,12 @@ import {Robot} from "../shared/models/robot.interface";
   styleUrls: ['robot-list.component.css']
 })
 export class RobotListComponent implements OnInit {
-  robot: Robot;
+  robots: Robot[];
 
-  constructor() { }
+  constructor(private robotListService: RobotListService) { }
 
   ngOnInit() {
-    const robotName = Math.random().toString(16).substring(2);
-
-    this.robot = {
-      name: robotName,
-      imageUrl: `https://robohash.org/${robotName}?size=150x150&bgset=bg1`
-    };
+    this.robots = this.robotListService.getRobots();
   }
 
 }
