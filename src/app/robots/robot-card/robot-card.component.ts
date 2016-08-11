@@ -16,7 +16,7 @@ export class RobotCardComponent implements OnInit {
 
     this.robot = {
       name: robotName,
-      imageUrl: `https://robohash.org/${robotName}?size=150x150&bg_set=1`
+      imageUrl: `https://robohash.org/${robotName}?size=150x150&bgset=bg1`
     };
   }
 
