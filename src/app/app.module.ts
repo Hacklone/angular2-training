@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RobotCardComponent } from './robots/robot-card/robot-card.component';
+import { RobotListComponent } from './robots/robot-list/robot-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RobotCardComponent
+    RobotCardComponent,
+    RobotListComponent
   ],
   imports: [
     BrowserModule,
