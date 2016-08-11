@@ -7,13 +7,15 @@ import { HeaderComponent } from './header/header.component';
 import { RobotCardComponent } from './robots/robot-card/robot-card.component';
 import { RobotListComponent } from './robots/robot-list/robot-list.component';
 import {RobotListService} from "./robots/shared/services/robot-list.service";
+import {MagnifyOnMouseEnterDirective} from "./shared/directives/magnify-on-mouse-enter.directive";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RobotCardComponent,
-    RobotListComponent
+    RobotListComponent,
+    MagnifyOnMouseEnterDirective
   ],
   imports: [
     BrowserModule,

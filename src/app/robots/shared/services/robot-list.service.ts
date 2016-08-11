@@ -11,7 +11,7 @@ export class RobotListService {
 
       robots.push({
         name: robotName,
-        imageUrl: `https://robohash.org/${robotName}?size=150x150&bgset=bg1`
+        imageUrl: `https://robohash.org/${i}?size=150x150&bgset=bg1`
       });
     }
 
