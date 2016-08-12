@@ -11,10 +11,7 @@
             (click)="onSearchForBook()">
       <span class="fa fa-2x fa-search"></span>
     </button>
-    <button (click)="onAddToCartButtonClick()"
-            class="btn btn-primary" title="Add to cart">
-      <span class="fa fa-2x fa-shopping-cart"></span>
-    </button>
+    <ng-content></ng-content>
   </div>
   <div *ngIf="booksFoundForRobot">
     <h4>Found in books</h4>

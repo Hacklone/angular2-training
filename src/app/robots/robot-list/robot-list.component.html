@@ -1,6 +1,10 @@
 <div class="robot-list">
   <app-robot-card *ngFor="let robot of robots"
                   [robot]="robot"
-                  (onOpenRobotProfile)="onOpenRobotProfile($event)"
-                  (onAddToCart)="onAddRobotToCart($event)"></app-robot-card>
+                  (onOpenRobotProfile)="onOpenRobotProfile($event)">
+    <button (click)="onAddRobotToCart(robot)"
+            class="btn btn-primary" title="Add to cart">
+      <span class="fa fa-2x fa-shopping-cart"></span>
+    </button>
+  </app-robot-card>
 </div>

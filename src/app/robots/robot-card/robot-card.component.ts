@@ -12,18 +12,11 @@ export class RobotCardComponent implements OnInit {
   robot: Robot;
 
   @Output()
-  onAddToCart = new EventEmitter<Robot>();
-
-  @Output()
   onOpenRobotProfile = new EventEmitter<Robot>();
 
   booksFoundForRobot: string[];
 
   constructor(private bookDatabaseService: BookDatabaseService) { }
-
-  onAddToCartButtonClick() {
-    this.onAddToCart.emit(this.robot);
-  }
 
   async onSearchForBook() {
     const booksFound = await this.bookDatabaseService.searchForBook(this.robot.name);
