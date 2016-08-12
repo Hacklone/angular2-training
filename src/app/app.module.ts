@@ -10,6 +10,8 @@ import {RobotListService} from "./robots/shared/services/robot-list.service";
 import {MagnifyOnMouseEnterDirective} from "./shared/directives/magnify-on-mouse-enter.directive";
 import {RobotCartService} from "./robots/shared/services/robot-cart.service";
 import { RobotCartComponent } from './robots/robot-cart/robot-cart.component';
+import {BookDatabaseService} from "./robots/shared/services/book-database.service";
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -23,9 +25,10 @@ import { RobotCartComponent } from './robots/robot-cart/robot-cart.component';
   imports: [
     BrowserModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [RobotListService, RobotCartService],
+  providers: [RobotListService, RobotCartService, BookDatabaseService],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

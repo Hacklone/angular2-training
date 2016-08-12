@@ -6,9 +6,19 @@
     {{ robot.name }}
   </div>
   <div>
+    <button class="btn btn-default" (click)="onSearchForBook()">
+      <span class="fa fa-2x fa-search"></span>
+    </button>
     <button (click)="onAddToCartButtonClick()"
             class="btn btn-primary" title="Add to cart">
       <span class="fa fa-2x fa-shopping-cart"></span>
     </button>
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let book of booksFoundForRobot">
+        {{ book }}
+      </li>
+    </ul>
   </div>
 </div>

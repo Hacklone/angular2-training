@@ -9,3 +9,7 @@
 
   text-align: center;
 }
+
+div {
+  transition: 0.1s ease-in all;
+}
