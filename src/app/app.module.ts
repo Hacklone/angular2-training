@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ApplicationRef } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -8,6 +8,8 @@ import { RobotCardComponent } from './robots/robot-card/robot-card.component';
 import { RobotListComponent } from './robots/robot-list/robot-list.component';
 import {RobotListService} from "./robots/shared/services/robot-list.service";
 import {MagnifyOnMouseEnterDirective} from "./shared/directives/magnify-on-mouse-enter.directive";
+import {RobotCartService} from "./robots/shared/services/robot-cart.service";
+import { RobotCartComponent } from './robots/robot-cart/robot-cart.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +17,15 @@ import {MagnifyOnMouseEnterDirective} from "./shared/directives/magnify-on-mouse
     HeaderComponent,
     RobotCardComponent,
     RobotListComponent,
-    MagnifyOnMouseEnterDirective
+    MagnifyOnMouseEnterDirective,
+    RobotCartComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule
   ],
-  providers: [RobotListService],
+  providers: [RobotListService, RobotCartService],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,3 @@
 <div class="robot-list">
-  <app-robot-card *ngFor="let robot of robots" [robot]="robot"></app-robot-card>
+  <app-robot-card *ngFor="let robot of robots" [robot]="robot" (onAddToCart)="onAddRobotToCart($event)"></app-robot-card>
 </div>
