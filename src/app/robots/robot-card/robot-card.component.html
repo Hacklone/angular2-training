@@ -1,9 +1,9 @@
 <div class="robot-card">
-  <div>
-    <img [src]="robot.imageUrl">
+  <div (click)="onRobotDetailClick()">
+    <img [src]="robot?.imageUrl">
   </div>
   <div appMagnifyOnMouseEnter="1.5">
-    {{ robot.name }}
+    {{ robot?.name }}
   </div>
   <div>
     <button class="btn btn-default"

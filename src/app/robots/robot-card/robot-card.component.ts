@@ -14,6 +14,9 @@ export class RobotCardComponent implements OnInit {
   @Output()
   onAddToCart = new EventEmitter<Robot>();
 
+  @Output()
+  onOpenRobotProfile = new EventEmitter<Robot>();
+
   booksFoundForRobot: string[];
 
   constructor(private bookDatabaseService: BookDatabaseService) { }
@@ -26,6 +29,10 @@ export class RobotCardComponent implements OnInit {
     const booksFound = await this.bookDatabaseService.searchForBook(this.robot.name);
 
     this.booksFoundForRobot = booksFound.items.map(book => book.volumeInfo.title);
+  }
+
+  onRobotDetailClick() {
+    this.onOpenRobotProfile.emit(this.robot);
   }
 
   ngOnInit() {
