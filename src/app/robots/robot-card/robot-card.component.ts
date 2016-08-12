@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {Robot} from "../shared/models/robot.interface";
 import {BookDatabaseService} from "../shared/services/book-database.service";
+import {Robot} from "../../shared/models/robot.interface";
 
 @Component({
   selector: 'app-robot-card',

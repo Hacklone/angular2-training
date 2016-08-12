@@ -1,6 +1,6 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {Robot} from "../shared/models/robot.interface";
-import {RobotCartService} from "../shared/services/robot-cart.service";
+import {Robot} from "../../shared/models/robot.interface";
+import {RobotCartService} from "../../shared/services/robot-cart.service";
 import {Subscription} from "rxjs";
 
 @Component({

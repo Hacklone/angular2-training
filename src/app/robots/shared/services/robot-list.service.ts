@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
-import {Robot} from "../models/robot.interface";
 import * as Chance from 'chance';
+import {Robot} from "../../../shared/models/robot.interface";
 
 @Injectable()
 export class RobotListService {

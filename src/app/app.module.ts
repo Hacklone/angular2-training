@@ -8,11 +8,12 @@ import { RobotCardComponent } from './robots/robot-card/robot-card.component';
 import { RobotListComponent } from './robots/robot-list/robot-list.component';
 import {RobotListService} from "./robots/shared/services/robot-list.service";
 import {MagnifyOnMouseEnterDirective} from "./shared/directives/magnify-on-mouse-enter.directive";
-import {RobotCartService} from "./robots/shared/services/robot-cart.service";
-import { RobotCartComponent } from './robots/robot-cart/robot-cart.component';
+import {RobotCartService} from "./shared/services/robot-cart.service";
+import { RobotCartComponent } from './cart/robot-cart/robot-cart.component';
 import {BookDatabaseService} from "./robots/shared/services/book-database.service";
 import {HttpModule} from "@angular/http";
 import {OrderByStringLengthPipe} from "./shared/pipes/order-by-string-length.pipe";
+import {AppRoutingModule} from "./app.route";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {OrderByStringLengthPipe} from "./shared/pipes/order-by-string-length.pip
     BrowserModule,
     CommonModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [RobotListService, RobotCartService, BookDatabaseService],
   entryComponents: [AppComponent],
