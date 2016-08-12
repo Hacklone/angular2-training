@@ -12,6 +12,7 @@ import {RobotCartService} from "./robots/shared/services/robot-cart.service";
 import { RobotCartComponent } from './robots/robot-cart/robot-cart.component';
 import {BookDatabaseService} from "./robots/shared/services/book-database.service";
 import {HttpModule} from "@angular/http";
+import {OrderByStringLengthPipe} from "./shared/pipes/order-by-string-length.pipe";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {HttpModule} from "@angular/http";
     RobotCardComponent,
     RobotListComponent,
     MagnifyOnMouseEnterDirective,
-    RobotCartComponent
+    RobotCartComponent,
+    OrderByStringLengthPipe
   ],
   imports: [
     BrowserModule,

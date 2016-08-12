@@ -6,7 +6,9 @@
     {{ robot.name }}
   </div>
   <div>
-    <button class="btn btn-default" (click)="onSearchForBook()">
+    <button class="btn btn-default"
+            *ngIf="!booksFoundForRobot"
+            (click)="onSearchForBook()">
       <span class="fa fa-2x fa-search"></span>
     </button>
     <button (click)="onAddToCartButtonClick()"
@@ -14,9 +16,10 @@
       <span class="fa fa-2x fa-shopping-cart"></span>
     </button>
   </div>
-  <div>
-    <ul>
-      <li *ngFor="let book of booksFoundForRobot">
+  <div *ngIf="booksFoundForRobot">
+    <h4>Found in books</h4>
+    <ul class="list-unstyled">
+      <li *ngFor="let book of booksFoundForRobot | orderByStringLength:false">
         {{ book }}
       </li>
     </ul>
