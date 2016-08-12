@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {RobotListService} from "../../shared/services/robot-list.service";
-import {RobotCartService} from "../../shared/services/robot-cart.service";
-import {Robot} from "../../shared/models/robot.interface";
 import {Router} from "@angular/router";
+import {Robot} from "../shared/models/robot.interface";
+import {RobotListService} from "../shared/services/robot-list.service";
+import {RobotCartService} from "../shared/services/robot-cart.service";
 
 @Component({
   selector: 'app-robot-list',

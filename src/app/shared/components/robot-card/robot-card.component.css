@@ -13,3 +13,7 @@
 div {
   transition: 0.1s ease-in all;
 }
+
+:host-context(app-robot-profile) .robot-card {
+  display: block;
+}

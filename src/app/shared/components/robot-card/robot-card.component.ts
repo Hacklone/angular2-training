@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {BookDatabaseService} from "../shared/services/book-database.service";
-import {Robot} from "../../shared/models/robot.interface";
+import {Robot} from "../../models/robot.interface";
+import {BookDatabaseService} from "../../services/book-database.service";
 
 @Component({
   selector: 'app-robot-card',
@@ -31,5 +31,4 @@ export class RobotCardComponent implements OnInit {
   ngOnInit() {
 
   }
-
 }

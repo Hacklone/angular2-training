@@ -1,12 +1,9 @@
 import {Routes, RouterModule} from "@angular/router";
-import {RobotListComponent} from "./robots/robot-list/robot-list.component";
-import {RobotCartComponent} from "./cart/robot-cart/robot-cart.component";
-import {RobotProfileComponent} from "./robot-profile/robot-profile.component";
 
 const appRoutes: Routes = [
-  { path: '', component: RobotListComponent },
-  { path: 'cart', component: RobotCartComponent },
-  { path: 'robots/:id', component: RobotProfileComponent },
+  { path: '', loadChildren: 'app/+robot-list/robot-list.module#RobotListModule' },
+  { path: 'cart', loadChildren: 'app/+robot-cart/robot-cart.module#RobotCartModule' },
+  { path: 'robots/:id', loadChildren: 'app/+robot-profile/robot-profile.module#RobotProfileModule' },
   { path: '**', redirectTo: '', terminal: true }
 ];
 
