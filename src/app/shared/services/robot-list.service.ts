@@ -25,4 +25,13 @@ export class RobotListService {
   getRobotById(id: number): Promise<Robot> {
     return Promise.resolve(this.robots.find(robot => robot.id === id));
   }
+
+  async modifyRobot(id: number, value: any): Promise<Robot> {
+    const robot = await this.getRobotById(id);
+
+    robot.name = value.name;
+    robot.imageUrl = value.imageUrl;
+
+    return robot;
+  }
 }

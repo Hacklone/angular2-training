@@ -1,1 +1,21 @@
-<app-robot-card *ngIf="robot" [robot]="robot"></app-robot-card>
+<div class="container">
+  <app-robot-card *ngIf="robot" [robot]="robot"></app-robot-card>
+
+  <form (ngSubmit)="onEditRobotFormSubmit(robotEditForm)" [formGroup]="robotEditForm">
+    <label for="robot-name">name</label>
+    <input id="robot-name" class="form-control" name="robot-name" formControlName="name">
+
+    <div style="color: red;" *ngIf="robotEditForm.controls.name.invalid && robotEditForm.controls.name.dirty">
+      Name must be filled
+    </div>
+
+    <label for="robot-image">Image Url</label>
+    <input id="robot-image" class="form-control" name="robot-image" formControlName="imageUrl">
+
+    <div style="margin-top: 10px">
+      <button type="submit" class="btn btn-primary" [disabled]="robotEditForm.invalid">
+        Save
+      </button>
+    </div>
+  </form>
+</div>
