@@ -24,4 +24,8 @@ export class RobotListComponent implements OnInit {
       });
     }
   }
+
+  onAddRobotToCart(robot: Robot) {
+    console.log(`Robot added: ${robot.name}`);
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Robot } from '../../models/robot.interface';
 
 @Component({
@@ -13,7 +13,14 @@ export class RobotCardComponent implements OnInit {
   @Input()
   public robot: Robot;
 
+  @Output()
+  public addToCart: EventEmitter<Robot> = new EventEmitter<Robot>();
+
   ngOnInit() {
 
+  }
+
+  onCartButtonClick() {
+    this.addToCart.emit(this.robot);
   }
 }
