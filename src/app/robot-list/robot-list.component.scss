@@ -3,10 +3,11 @@
     float: left;
 
     display: inline-block;
+    box-sizing: border-box;
 
     width: 30%;
 
-    margin: 15px;
+    margin: 25px;
   }
 
   &::after {
