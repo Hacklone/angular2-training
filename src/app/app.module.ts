@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { RobotCardComponent } from './shared/components/robot-card/robot-card.component';
 import { RobotListComponent } from './robot-list/robot-list.component';
+import { RobotListService } from './shared/services/robot-list.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { RobotListComponent } from './robot-list/robot-list.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    RobotListService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

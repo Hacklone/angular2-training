@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Chance } from 'chance';
 import { Robot } from '../shared/models/robot.interface';
+import { RobotListService } from '../shared/services/robot-list.service';
 
 @Component({
   selector: 'app-robot-list',
@@ -9,20 +9,14 @@ import { Robot } from '../shared/models/robot.interface';
 })
 export class RobotListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _robotListService: RobotListService) {
 
-  public robotList: Robot[] = [];
+  }
+
+  public robotList: Robot[];
 
   ngOnInit() {
-    for(let i = 0; i < 30; i++) {
-      const name = new Chance().name();
-
-      this.robotList.push({
-        id: i,
-        name,
-        imageUrl: `https://robohash.org/${name}?size=50x50`
-      });
-    }
+    this.robotList = this._robotListService.getRobots();
   }
 
   onAddRobotToCart(robot: Robot) {
