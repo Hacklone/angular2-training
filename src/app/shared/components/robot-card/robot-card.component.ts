@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Chance } from 'chance';
+import { Component, OnInit, Input } from '@angular/core';
+import { Robot } from '../../models/robot.interface';
 
 @Component({
   selector: 'app-robot-card',
@@ -10,14 +10,10 @@ export class RobotCardComponent implements OnInit {
   constructor() {
   }
 
-  public robot;
+  @Input()
+  public robot: Robot;
 
   ngOnInit() {
-    const name = new Chance().name();
 
-    this.robot = {
-      name,
-      imageUrl: `https://robohash.org/${name}`
-    };
   }
 }

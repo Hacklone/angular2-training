@@ -1,0 +1,15 @@
+#robot-list {
+  app-robot-card {
+    float: left;
+
+    display: inline-block;
+
+    width: 30%;
+
+    margin: 15px;
+  }
+
+  &::after {
+    clear: both;
+  }
+}

@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { RobotCardComponent } from './shared/components/robot-card/robot-card.component';
+import { RobotListComponent } from './robot-list/robot-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RobotCardComponent
+    RobotCardComponent,
+    RobotListComponent
   ],
   imports: [
     BrowserModule,
