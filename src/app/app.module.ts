@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { RobotCardComponent } from './shared/components/robot-card/robot-card.component';
 import { RobotListComponent } from './robot-list/robot-list.component';
 import { RobotListService } from './shared/services/robot-list.service';
+import { MagnifyDirective } from './shared/directives/magnify.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     RobotCardComponent,
-    RobotListComponent
+    RobotListComponent,
+    MagnifyDirective
   ],
   imports: [
     BrowserModule,
