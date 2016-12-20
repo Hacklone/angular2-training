@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Robot } from '../shared/models/robot.interface';
-import { RobotListService } from '../shared/services/robot-list.service';
+import { Robot } from '../../shared/models/robot.interface';
+import { RobotListService } from '../../shared/services/robot-list.service';
 import { Router } from '@angular/router';
-import { CartService } from '../shared/services/cart.service';
+import { CartService } from '../../shared/services/cart.service';
 
 @Component({
   selector: 'app-robot-list',
@@ -28,6 +28,6 @@ export class RobotListComponent implements OnInit {
   }
 
   onRobotCardClick(robot: Robot) {
-    this._router.navigate(['robots', robot.id]);
+    this._router.navigate(['browse', robot.id]);
   }
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { RobotListService } from '../shared/services/robot-list.service';
-import { Robot } from '../shared/models/robot.interface';
+import { RobotListService } from '../../shared/services/robot-list.service';
+import { Robot } from '../../shared/models/robot.interface';
 
 @Component({
   selector: 'app-robot-profile',
