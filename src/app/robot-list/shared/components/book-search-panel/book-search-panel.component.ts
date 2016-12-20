@@ -13,7 +13,7 @@ export class BookSearchPanelComponent implements OnInit {
   @Input()
   public searchTerm: string;
 
-  public bookTitles: string[];
+  public bookTitles: string[] = [];
 
   public async searchForBooks() {
     const books: any = await this._bookStoreService.getBooksAsync(this.searchTerm);

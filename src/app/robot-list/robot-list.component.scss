@@ -1,11 +1,7 @@
 #robot-list {
   app-robot-card {
-    float: left;
-
-    display: inline-block;
+    display: block;
     box-sizing: border-box;
-
-    width: 30%;
 
     margin: 25px;
   }

@@ -6,7 +6,7 @@
   </div>
   <div class="col-xs-10">
     <ul>
-      <li *ngFor="let bookTitle of bookTitles">
+      <li *ngFor="let bookTitle of bookTitles | orderByLength:false">
         {{ bookTitle }}
       </li>
     </ul>

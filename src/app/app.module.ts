@@ -11,6 +11,7 @@ import { MagnifyDirective } from './shared/directives/magnify.directive';
 import { CoolHttpModule } from 'angular2-cool-http';
 import { BookStoreService } from './robot-list/shared/services/book-store.service';
 import { BookSearchPanelComponent } from './robot-list/shared/components/book-search-panel/book-search-panel.component';
+import { OrderByLengthPipe } from './shared/pipes/order-by-length.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BookSearchPanelComponent } from './robot-list/shared/components/book-se
     RobotCardComponent,
     RobotListComponent,
     MagnifyDirective,
-    BookSearchPanelComponent
+    BookSearchPanelComponent,
+    OrderByLengthPipe
   ],
   imports: [
     BrowserModule,
