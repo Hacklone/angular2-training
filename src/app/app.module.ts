@@ -8,13 +8,17 @@ import { RobotCardComponent } from './shared/components/robot-card/robot-card.co
 import { RobotListComponent } from './robot-list/robot-list.component';
 import { RobotListService } from './shared/services/robot-list.service';
 import { MagnifyDirective } from './shared/directives/magnify.directive';
+import { CoolHttpModule } from 'angular2-cool-http';
+import { BookStoreService } from './robot-list/shared/services/book-store.service';
+import { BookSearchPanelComponent } from './robot-list/shared/components/book-search-panel/book-search-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RobotCardComponent,
     RobotListComponent,
-    MagnifyDirective
+    MagnifyDirective,
+    BookSearchPanelComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,8 @@ import { MagnifyDirective } from './shared/directives/magnify.directive';
     HttpModule
   ],
   providers: [
-    RobotListService
+    RobotListService,
+    BookStoreService
   ],
   bootstrap: [AppComponent]
 })

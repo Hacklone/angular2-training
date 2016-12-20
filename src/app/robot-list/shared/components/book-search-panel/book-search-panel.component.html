@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-2">
+    <button class="btn btn-warning" (click)="searchForBooks()">
+      <span class="fa fa-search"></span>
+    </button>
+  </div>
+  <div class="col-xs-10">
+    <ul>
+      <li *ngFor="let bookTitle of bookTitles">
+        {{ bookTitle }}
+      </li>
+    </ul>
+  </div>
+</div>
