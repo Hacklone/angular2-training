@@ -4,22 +4,25 @@ import { Robot } from '../models/robot.interface';
 
 @Injectable()
 export class RobotListService {
+  private _robots: Robot[] = [];
 
-  constructor() { }
-
-  getRobots(): Robot[] {
-    const robots = [];
-
+  constructor() {
     for(let i = 0; i < 30; i++) {
       const name = new Chance().name();
 
-      robots.push({
+      this._robots.push({
         id: i,
         name,
         imageUrl: `https://robohash.org/${name}?size=50x50`
       });
     }
+  }
 
-    return robots;
+  getRobots(): Robot[] {
+    return this._robots;
+  }
+
+  getRobotById(robotId: number) {
+    return this._robots.find(robot => robot.id === robotId);
   }
 }

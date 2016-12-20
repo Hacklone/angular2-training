@@ -8,10 +8,12 @@ import { RobotCardComponent } from './shared/components/robot-card/robot-card.co
 import { RobotListComponent } from './robot-list/robot-list.component';
 import { RobotListService } from './shared/services/robot-list.service';
 import { MagnifyDirective } from './shared/directives/magnify.directive';
-import { CoolHttpModule } from 'angular2-cool-http';
 import { BookStoreService } from './robot-list/shared/services/book-store.service';
 import { BookSearchPanelComponent } from './robot-list/shared/components/book-search-panel/book-search-panel.component';
 import { OrderByLengthPipe } from './shared/pipes/order-by-length.pipe';
+import { AppRoutes } from './app.routes';
+import { HeaderComponent } from './header/header.component';
+import { RobotProfileComponent } from './robot-profile/robot-profile.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,16 @@ import { OrderByLengthPipe } from './shared/pipes/order-by-length.pipe';
     RobotListComponent,
     MagnifyDirective,
     BookSearchPanelComponent,
-    OrderByLengthPipe
+    OrderByLengthPipe,
+    HeaderComponent,
+    RobotProfileComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+
+    AppRoutes
   ],
   providers: [
     RobotListService,
@@ -33,4 +39,5 @@ import { OrderByLengthPipe } from './shared/pipes/order-by-length.pipe';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

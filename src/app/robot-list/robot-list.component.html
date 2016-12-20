@@ -1,5 +1,6 @@
 <div id="robot-list" class="text-center">
   <app-robot-card *ngFor="let robot of robotList"
+                  (click)="onRobotCardClick(robot)"
                   [robot]="robot"
                   (addToCart)="onAddRobotToCart($event)"
                   appMagnify="1.01">
