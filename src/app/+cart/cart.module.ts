@@ -10,6 +10,10 @@ import { CartRoutes } from './cart.routes';
 
     CartRoutes
   ],
-  declarations: [CartComponent, CartBoxComponent]
+  declarations: [
+    CartComponent,
+    CartBoxComponent
+  ]
 })
-export class CartModule { }
+export class CartModule {
+}

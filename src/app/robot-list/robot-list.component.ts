@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Robot } from '../shared/models/robot.interface';
 import { RobotListService } from '../shared/services/robot-list.service';
 import { Router } from '@angular/router';
+import { CartService } from '../shared/services/cart.service';
 
 @Component({
   selector: 'app-robot-list',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 export class RobotListComponent implements OnInit {
 
   constructor(private _robotListService: RobotListService,
+              private _cartService: CartService,
               private _router: Router) {
 
   }
@@ -22,7 +24,7 @@ export class RobotListComponent implements OnInit {
   }
 
   onAddRobotToCart(robot: Robot) {
-    console.log(`Robot added: ${robot.name}`);
+    this._cartService.addRobotToCart(robot);
   }
 
   onRobotCardClick(robot: Robot) {

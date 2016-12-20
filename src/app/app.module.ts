@@ -14,6 +14,7 @@ import { OrderByLengthPipe } from './shared/pipes/order-by-length.pipe';
 import { AppRoutes } from './app.routes';
 import { HeaderComponent } from './header/header.component';
 import { RobotProfileComponent } from './robot-profile/robot-profile.component';
+import { CartService } from './shared/services/cart.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { RobotProfileComponent } from './robot-profile/robot-profile.component';
   ],
   providers: [
     RobotListService,
-    BookStoreService
+    BookStoreService,
+
+    CartService
   ],
   bootstrap: [AppComponent]
 })
