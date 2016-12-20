@@ -25,4 +25,12 @@ export class RobotListService {
   getRobotById(robotId: number) {
     return this._robots.find(robot => robot.id === robotId);
   }
+
+  addRobotWithName(name: string) {
+    this._robots.push({
+      id: this._robots.length,
+      name,
+      imageUrl: `https://robohash.org/${name}?size=50x50`
+    });
+  }
 }

@@ -1,3 +1,17 @@
-<p>
-  add-robot works!
-</p>
+<div class="container">
+  <h2>Add robot</h2>
+
+  <form [formGroup]="addRobotForm" (ngSubmit)="onFormSubmit()">
+    <div [class.has-error]="addRobotForm.controls.robotName.invalid">
+
+      <input formControlName="robotName"
+             name="robotName"
+             type="text"
+             class="form-control">
+    </div>
+
+    <button [disabled]="addRobotForm.invalid" type="submit" class="btn btn-primary">
+      Add
+    </button>
+  </form>
+</div>
