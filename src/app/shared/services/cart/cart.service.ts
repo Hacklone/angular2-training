@@ -4,7 +4,7 @@ import { RobotInCartMetadata } from './robot-in-cart-metadata.interface';
 
 @Injectable()
 export class CartService {
-  private _robotsInCart: {
+  public robotsInCart: {
     [id: string]: RobotInCartMetadata
   } = {};
 
@@ -17,14 +17,14 @@ export class CartService {
   public removeRobotFromCart(robot: Robot) {
     const cartData = this._getRobotMetadata(robot);
 
-    cartData.count--;
+    cartData.count = Math.max(0, cartData.count - 1);
   }
 
   private _getRobotMetadata(robot: Robot) {
-    let cartData = this._robotsInCart[robot.id];
+    let cartData = this.robotsInCart[robot.id];
 
     if (!cartData) {
-      cartData = this._robotsInCart[robot.id] = {
+      cartData = this.robotsInCart[robot.id] = {
         count: 0,
         robot: robot
       };

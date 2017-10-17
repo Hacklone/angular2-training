@@ -1,4 +1,11 @@
 <div>
+  {{ cart | json }}
+
   <app-robot-card *ngFor="let robot of robots" [robot]="robot">
+    <div>
+      <button class="btn btn-primary" (click)="addRobotToCart(robot)">
+        <span class="fa fa-shopping-basket"></span>
+      </button>
+    </div>
   </app-robot-card>
 </div>
