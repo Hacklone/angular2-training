@@ -1,5 +1,4 @@
 <div>
-  <div *ngFor="let robot of robots">
-    <img [src]="robot.imageUrl">
-  </div>
+  <app-robot-card *ngFor="let robot of robots" [robot]="robot">
+  </app-robot-card>
 </div>
