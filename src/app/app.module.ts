@@ -7,13 +7,15 @@ import { RobotListComponent } from './robot-list/robot-list.component';
 import { RobotCardComponent } from './shared/components/robot-card/robot-card.component';
 import { RobotsService } from './shared/services/robots/robots.service';
 import { CartService } from './shared/services/cart/cart.service';
+import { ZoomDirective } from './shared/directives/zoom.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RobotListComponent,
-    RobotCardComponent
+    RobotCardComponent,
+    ZoomDirective,
   ],
   imports: [
     BrowserModule
