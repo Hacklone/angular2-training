@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 import { Robot } from '../shared/services/robots/robot.interface';
 import { RobotsService } from '../shared/services/robots/robots.service';
 import { CartService } from '../shared/services/cart/cart.service';
+import { RobotDialogComponent } from './robot-dialog/robot-dialog.component';
 
 @Component({
   selector: 'app-robot-list',
@@ -10,7 +12,8 @@ import { CartService } from '../shared/services/cart/cart.service';
 })
 export class RobotListComponent implements OnInit {
 
-  constructor(private _robotsService: RobotsService,
+  constructor(private _dialogService: MatDialog,
+              private _robotsService: RobotsService,
               private _cartService: CartService) {
   }
 
@@ -26,5 +29,11 @@ export class RobotListComponent implements OnInit {
 
   public addRobotToCart(robot: Robot) {
     this._cartService.addRobotToCart(robot);
+  }
+
+  public openRobotDialog(robot: Robot) {
+    this._dialogService.open(RobotDialogComponent, {
+      data: robot
+    });
   }
 }

@@ -1,0 +1,14 @@
+<div>
+  <table class="table table-striped">
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th>Description</th>
+    </tr>
+    <tr *ngFor="let book of booksAboutTheRobot">
+      <td>{{ book.title }}</td>
+      <td><img [src]="book.imageUrl"></td>
+      <td>{{ book.description }}</td>
+    </tr>
+  </table>
+</div>
