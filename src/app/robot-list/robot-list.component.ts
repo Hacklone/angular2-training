@@ -12,7 +12,7 @@ export class RobotListComponent implements OnInit {
   constructor() {
   }
 
-  public robots: Robot[];
+  public robots: Robot[] = [];
 
   public ngOnInit() {
     const chance = new Chance();
@@ -21,7 +21,7 @@ export class RobotListComponent implements OnInit {
       this.robots.push({
         id: i.toString(),
         name: chance.name(),
-        imageUrl: `https://robohash.org/${i}?size=200x200&set=4&bgset=1`
+        imageUrl: `https://robohash.org/${i}?size=200x200&set=set4&bgset=bg1`
       });
     }
   }
