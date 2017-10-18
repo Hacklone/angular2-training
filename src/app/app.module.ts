@@ -11,8 +11,10 @@ import { CartService } from './shared/services/cart/cart.service';
 import { ZoomDirective } from './shared/directives/zoom.directive';
 import { BooksService } from './shared/services/books/books.service';
 import { RobotDialogComponent } from './robot-list/robot-dialog/robot-dialog.component';
-import { MatDialogModule } from '@angular/material';
+import { MatCheckboxModule, MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OrderByPropertyPipe } from './shared/pipes/order-by-property.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RobotCardComponent,
     ZoomDirective,
     RobotDialogComponent,
+    OrderByPropertyPipe,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpModule,
+    BrowserAnimationsModule,
+
     MatDialogModule,
-    BrowserAnimationsModule
+    MatCheckboxModule,
   ],
   providers: [
     RobotsService,

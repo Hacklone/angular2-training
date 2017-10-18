@@ -26,6 +26,8 @@ export class RobotListComponent implements OnInit {
 
   public robots: Robot[] = [];
 
+  public isAscending: boolean = true;
+
   public get robotAddedObservable(): Observable<Robot> {
     return this._robotAddedSubject.asObservable();
   }

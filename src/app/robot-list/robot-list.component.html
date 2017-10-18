@@ -7,7 +7,11 @@
     </button>
   </div>
 
-  <app-robot-card *ngFor="let robot of robots"
+  <div>
+    <mat-checkbox [(ngModel)]="isAscending">isAscending</mat-checkbox>
+  </div>
+  
+  <app-robot-card *ngFor="let robot of robots | orderByProperty:'name':isAscending"
                   [onRobotAdded]="robotAddedObservable"
                   [robot]="robot">
     <div>
