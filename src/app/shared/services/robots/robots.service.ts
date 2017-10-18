@@ -33,4 +33,8 @@ export class RobotsService {
       imageUrl: `https://robohash.org/${index}?size=200x200&set=set4&bgset=bg1`
     };
   }
+
+  getRobotById(robotId: string) {
+    return this._robots.find(robot => robot.id === robotId);
+  }
 }

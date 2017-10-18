@@ -2,7 +2,7 @@
   <div>{{ cart | json }}</div>
 
   <div>
-    <button (click)="addNewRobot()">
+    <button class="btn btn-primary" (click)="addNewRobot()">
       <span class="fa fa-plus"></span>
     </button>
   </div>
@@ -10,7 +10,7 @@
   <div>
     <mat-checkbox [(ngModel)]="isAscending">isAscending</mat-checkbox>
   </div>
-  
+
   <app-robot-card *ngFor="let robot of robots | orderByProperty:'name':isAscending"
                   [onRobotAdded]="robotAddedObservable"
                   [robot]="robot">
@@ -21,6 +21,10 @@
 
       <button class="btn" (click)="openRobotDialog(robot)">
         <span class="fa fa-search"></span>
+      </button>
+
+      <button class="btn" (click)="openRobotDetails(robot)">
+        <span class="fa fa-info"></span>
       </button>
     </div>
   </app-robot-card>

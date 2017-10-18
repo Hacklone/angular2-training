@@ -7,6 +7,8 @@ import { RobotDialogComponent } from './robot-dialog/robot-dialog.component';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { RobotCardComponent } from '../shared/components/robot-card/robot-card.component';
+import { Router } from '@angular/router';
+import { RouteLocations } from '../shared/routing/route-locations.enum';
 
 @Component({
   selector: 'app-robot-list',
@@ -18,7 +20,8 @@ export class RobotListComponent implements OnInit {
 
   constructor(private _dialogService: MatDialog,
               private _robotsService: RobotsService,
-              private _cartService: CartService) {
+              private _cartService: CartService,
+              private _router: Router) {
   }
 
   @ViewChild(RobotCardComponent)
@@ -48,6 +51,10 @@ export class RobotListComponent implements OnInit {
     this._dialogService.open(RobotDialogComponent, {
       data: robot
     });
+  }
+
+  public async openRobotDetails(robot: Robot) {
+    await this._router.navigate([RouteLocations.RobotDetails.replace(':id', robot.id)]);
   }
 
   public addNewRobot() {

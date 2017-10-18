@@ -9,7 +9,8 @@ import { Observable } from 'rxjs/Observable';
 })
 export class RobotCardComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   @Input()
   public robot: Robot;
@@ -18,10 +19,12 @@ export class RobotCardComponent implements OnInit {
   public onRobotAdded: Observable<Robot>;
 
   public ngOnInit() {
-    //TODO: unsubscribe
-    this.onRobotAdded.subscribe(() => {
-      this.robot.name += ' :)';
-    });
+    if (this.onRobotAdded) {
+      //TODO: unsubscribe
+      this.onRobotAdded.subscribe(() => {
+        this.robot.name += ' :)';
+      });
+    }
   }
 
   public consoleLogRobot() {
