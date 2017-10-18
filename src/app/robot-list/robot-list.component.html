@@ -2,7 +2,7 @@
   <div>{{ cart | json }}</div>
 
   <div>
-    <button class="btn btn-primary" (click)="addNewRobot()">
+    <button id="add-robot-button" class="btn btn-primary" (click)="addNewRobot()">
       <span class="fa fa-plus"></span>
     </button>
   </div>
@@ -12,7 +12,7 @@
   </div>
 
   <app-robot-card *ngFor="let robot of robots | orderByProperty:'name':isAscending"
-                  [onRobotAdded]="robotAddedObservable"
+                  [robotAdded]="robotAddedObservable"
                   [robot]="robot">
     <div>
       <button class="btn btn-primary" (click)="addRobotToCart(robot)">

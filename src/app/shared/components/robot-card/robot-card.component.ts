@@ -16,12 +16,12 @@ export class RobotCardComponent implements OnInit {
   public robot: Robot;
 
   @Input()
-  public onRobotAdded: Observable<Robot>;
+  public robotAdded: Observable<Robot>;
 
   public ngOnInit() {
-    if (this.onRobotAdded) {
+    if (this.robotAdded) {
       //TODO: unsubscribe
-      this.onRobotAdded.subscribe(() => {
+      this.robotAdded.subscribe(() => {
         this.robot.name += ' :)';
       });
     }
