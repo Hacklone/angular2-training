@@ -1,7 +1,14 @@
 <div>
-  {{ cart | json }}
+  <div>{{ cart | json }}</div>
+
+  <div>
+    <button (click)="addNewRobot()">
+      <span class="fa fa-plus"></span>
+    </button>
+  </div>
 
   <app-robot-card *ngFor="let robot of robots"
+                  [onRobotAdded]="robotAddedObservable"
                   [robot]="robot">
     <div>
       <button class="btn btn-primary" (click)="addRobotToCart(robot)">

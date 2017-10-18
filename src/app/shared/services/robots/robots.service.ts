@@ -2,21 +2,35 @@ import { Injectable } from '@angular/core';
 import { Robot } from './robot.interface';
 import * as Chance from 'chance';
 
+const chance = new Chance();
+
 @Injectable()
 export class RobotsService {
-  public getRobots(): Robot[] {
-    const robots = [];
+  private _robots = [];
 
-    const chance = new Chance();
-
-    for (let i = 0; i < 20; i++) {
-      robots.push({
-        id: i.toString(),
-        name: chance.name(),
-        imageUrl: `https://robohash.org/${i}?size=200x200&set=set4&bgset=bg1`
-      });
+  constructor() {
+    for (let i = 0; i < 2; i++) {
+      this._robots.push(this._generateRobot(i));
     }
+  }
 
-    return robots;
+  public getRobots(): Robot[] {
+    return this._robots;
+  }
+
+  public addNewRobot() {
+    const robot = this._generateRobot(this._robots.length);
+
+    this._robots.push(robot);
+
+    return robot;
+  }
+
+  private _generateRobot(index: number): Robot {
+    return {
+      id: index.toString(),
+      name: chance.name(),
+      imageUrl: `https://robohash.org/${index}?size=200x200&set=set4&bgset=bg1`
+    };
   }
 }
