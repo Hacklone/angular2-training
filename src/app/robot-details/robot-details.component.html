@@ -1,11 +1,11 @@
 <div>
-  <form (submit)="saveRobot()">
+  <form (submit)="saveRobot()" [formGroup]="editingRobotForm">
     <div>
       <img [src]="editingRobot.imageUrl">
     </div>
 
     <mat-form-field>
-      <input matInput [(ngModel)]="editingRobot.name" name="robot-name" placeholder="Robot name">
+      <input matInput formControlName="name" placeholder="Robot name">
     </mat-form-field>
 
     <div>
