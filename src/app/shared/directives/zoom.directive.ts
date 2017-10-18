@@ -21,7 +21,6 @@ export class ZoomDirective {
   }
 
   private _setScale(scale: number) {
-    this._elementRef.nativeElement.style.margin = scale === 1 ? '0' : `40px 20px`;
     this._elementRef.nativeElement.style.transform = `scale(${scale})`;
   }
 }
