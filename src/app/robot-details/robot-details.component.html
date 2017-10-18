@@ -1,1 +1,18 @@
-<app-robot-card [robot]="robot"></app-robot-card>
+<div>
+  <form (submit)="saveRobot()">
+    <div>
+      <img [src]="editingRobot.imageUrl">
+    </div>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="editingRobot.name" name="robot-name" placeholder="Robot name">
+    </mat-form-field>
+
+    <div>
+      <button type="submit">
+        <span class="fa fa-save"></span>
+        Save
+      </button>
+    </div>
+  </form>
+</div>

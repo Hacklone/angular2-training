@@ -14,15 +14,18 @@ export class RobotDetailsComponent implements OnInit {
               private _robotsService: RobotsService) {
   }
 
-  public robot: Robot;
+  public editingRobot: Robot;
 
   ngOnInit() {
     //TODO: unsubscribe
     this._activatedRoute.params.subscribe((params: Params) => {
       const robotId = params.id;
 
-      this.robot =  this._robotsService.getRobotById(robotId);
+      this.editingRobot = JSON.parse(JSON.stringify(this._robotsService.getRobotById(robotId)));
     });
   }
 
+  public saveRobot() {
+    this._robotsService.updateRobot(this.editingRobot);
+  }
 }

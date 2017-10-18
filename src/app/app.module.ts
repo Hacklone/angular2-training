@@ -11,7 +11,7 @@ import { CartService } from './shared/services/cart/cart.service';
 import { ZoomDirective } from './shared/directives/zoom.directive';
 import { BooksService } from './shared/services/books/books.service';
 import { RobotDialogComponent } from './robot-list/robot-dialog/robot-dialog.component';
-import { MatCheckboxModule, MatDialogModule } from '@angular/material';
+import { MatCheckboxModule, MatDialogModule, MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrderByPropertyPipe } from './shared/pipes/order-by-property.pipe';
 import { FormsModule } from '@angular/forms';
@@ -39,6 +39,7 @@ import { RobotDetailsComponent } from './robot-details/robot-details.component';
 
     MatDialogModule,
     MatCheckboxModule,
+    MatInputModule,
 
     AppRouteModule
   ],
