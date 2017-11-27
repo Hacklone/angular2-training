@@ -1,4 +1,10 @@
 <div class="container">
+  <h2>Robot with the highest price</h2>
+  <div *ngIf="robotWithHighestPrice">
+    <app-robot-card [robot]="robotWithHighestPrice"></app-robot-card>
+  </div>
+
+  <h2>Robots</h2>
   <div *ngFor="let robot of robots" class="robot">
     <app-robot-card [robot]="robot">
       <div class="robot-card-actions">

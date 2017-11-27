@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Robot } from '../../models/robot.interface';
 import * as Chance from 'chance';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 
 const chance = new Chance();
 
 @Injectable()
 export class RobotsService {
+  private _robotWithHighestPrice = new Subject<Robot>();
   private _robots: Robot[] = [];
 
   constructor() {
@@ -16,6 +19,14 @@ export class RobotsService {
         imageUrl: `https://robohash.org/${i}?bgset=bg1`
       });
     }
+
+    setInterval(() => {
+      this._robotWithHighestPrice.next(this._robots[Math.round(Math.random() * this._robots.length)]);
+    }, 5000);
+  }
+
+  public get robotWithHighestPrice(): Observable<Robot> {
+    return this._robotWithHighestPrice.asObservable();
   }
 
   public async getRobotsAsync(): Promise<Robot[]> {
