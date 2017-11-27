@@ -1,8 +1,5 @@
 <div>
   <div *ngFor="let robot of robots" class="robot">
-    <h3>{{ robot.name }}</h3>
-    <div>
-      <img [src]="robot.imageUrl">
-    </div>
+    <app-robot-card [robot]="robot"></app-robot-card>
   </div>
 </div>
