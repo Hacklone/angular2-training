@@ -16,4 +16,7 @@ export class RobotCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  public onAddToCartClick() {
+
+  }
 }
