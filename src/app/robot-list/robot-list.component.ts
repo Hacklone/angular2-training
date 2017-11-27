@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Robot } from '../shared/models/robot.interface';
-import * as Chance from 'chance';
-
-const chance = new Chance();
+import { RobotsService } from '../shared/services/robots/robots.service';
 
 @Component({
   selector: 'app-robot-list',
@@ -11,18 +9,12 @@ const chance = new Chance();
 })
 export class RobotListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _robotsService: RobotsService) { }
 
   public robots: Robot[] = [];
 
-  ngOnInit() {
-    for(let i = 0; i < 10; i++) {
-      this.robots.push({
-        id: i.toString(),
-        name: chance.name(),
-        imageUrl: `https://robohash.org/${i}?bgset=bg1`
-      });
-    }
+  public async ngOnInit() {
+    this.robots = await this._robotsService.getRobotsAsync();
   }
 
   public addRobotToCart(robot: Robot) {
