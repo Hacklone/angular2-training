@@ -1,5 +1,5 @@
 <div>
   <div *ngFor="let robot of robots" class="robot">
-    <app-robot-card [robot]="robot"></app-robot-card>
+    <app-robot-card [robot]="robot" (addToCart)="addRobotToCart($event)"></app-robot-card>
   </div>
 </div>

@@ -24,4 +24,8 @@ export class RobotListComponent implements OnInit {
       });
     }
   }
+
+  public addRobotToCart(robot: Robot) {
+    alert(robot.name);
+  }
 }
