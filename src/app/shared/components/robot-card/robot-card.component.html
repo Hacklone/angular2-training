@@ -4,8 +4,6 @@
     <img [src]="robot.imageUrl">
   </div>
   <div>
-    <button class="btn btn-primary" (click)="onAddToCartClick()">
-      <span class="fa fa-shopping-cart"></span>
-    </button>
+    <ng-content select=".robot-card-actions"></ng-content>
   </div>
 </div>
