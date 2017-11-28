@@ -8,6 +8,7 @@ import { RobotCardComponent } from './shared/components/robot-card/robot-card.co
 import { RobotsService } from './shared/services/robots/robots.service';
 import { ZoomDirective } from './shared/directives/zoom/zoom.directive';
 import { UserContextService } from './shared/services/user-context/user-context.service';
+import { BooksService } from './robot-list/shared/services/books/books.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UserContextService } from './shared/services/user-context/user-context.
   ],
   providers: [
     RobotsService,
-    UserContextService
+    UserContextService,
+    BooksService
   ],
   bootstrap: [AppComponent]
 })

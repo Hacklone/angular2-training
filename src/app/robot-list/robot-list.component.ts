@@ -44,4 +44,8 @@ export class RobotListComponent implements OnInit {
   public addRobotToCart(robot: Robot) {
     alert(robot.name);
   }
+
+  public async loadBooksForRobotAsync(robot: Robot) {
+
+  }
 }
