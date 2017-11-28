@@ -1,3 +1,5 @@
-<p>
-  robot-details works!
-</p>
+<div class="container" *ngIf="robot">
+  <h1>{{ robot?.name }}</h1>
+
+  <app-robot-card [robot]="robot"></app-robot-card>
+</div>

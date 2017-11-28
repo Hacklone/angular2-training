@@ -32,4 +32,8 @@ export class RobotsService {
   public async getRobotsAsync(): Promise<Robot[]> {
     return this._robots;
   }
+
+  public async getRobotByIdAsync(id: string): Promise<Robot> {
+    return this._robots.find(robot => robot.id === id);
+  }
 }

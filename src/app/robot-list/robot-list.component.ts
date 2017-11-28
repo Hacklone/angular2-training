@@ -7,6 +7,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { BooksService } from './shared/services/books/books.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { BooksDialogComponent } from './shared/components/books-dialog/books-dialog.component';
+import { Router } from '@angular/router';
+import { RouteLocations } from '../shared/services/routing/route-locations.enum';
 
 @Component({
   selector: 'app-robot-list',
@@ -18,6 +20,7 @@ export class RobotListComponent implements OnInit {
 
   constructor(private _robotsService: RobotsService,
               private _dialog: MatDialog,
+              private _router: Router,
               private _booksService: BooksService,
               private _userContextService: UserContextService) {
 
@@ -51,10 +54,14 @@ export class RobotListComponent implements OnInit {
   }
 
   public async loadBooksForRobotAsync(robot: Robot) {
-    //const booksAboutRobot = await this._booksService.searchForBooksAsync(robot.name);
-
     this._dialog.open(BooksDialogComponent, <MatDialogConfig<Robot>> {
       data: robot
     });
+  }
+
+  public async navigateToRobotDetails(robot: Robot) {
+    const urlToNavigate = RouteLocations.RobotDetails.replace(':id', robot.id);
+
+    await this._router.navigateByUrl(urlToNavigate);
   }
 }
