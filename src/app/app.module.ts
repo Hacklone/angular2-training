@@ -14,6 +14,7 @@ import { BooksService } from './robot-list/shared/services/books/books.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BooksDialogComponent } from './robot-list/shared/components/books-dialog/books-dialog.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     RobotListComponent,
     RobotCardComponent,
-    ZoomDirective
+    ZoomDirective,
+    BooksDialogComponent
   ],
   imports: [
     BrowserModule,

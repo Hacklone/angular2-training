@@ -50,6 +50,8 @@ export class RobotListComponent implements OnInit {
   }
 
   public async loadBooksForRobotAsync(robot: Robot) {
-    const booksAboutRobot = await this._booksService.searchForBooksAsync(robot.name);
+    //const booksAboutRobot = await this._booksService.searchForBooksAsync(robot.name);
+
+    this._dialog.open()
   }
 }
