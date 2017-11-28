@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BooksDialogComponent } from './robot-list/shared/components/books-dialog/books-dialog.component';
+import { OrderRobotsPipe } from './shared/pipes/order-robots/order-robots.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BooksDialogComponent } from './robot-list/shared/components/books-dialo
     RobotListComponent,
     RobotCardComponent,
     ZoomDirective,
-    BooksDialogComponent
+    BooksDialogComponent,
+    OrderRobotsPipe
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,8 @@
   </div>
 
   <h2>Robots</h2>
-  <div *ngFor="let robot of robots" class="robot">
+
+  <div *ngFor="let robot of robots | orderRobots:true" class="robot">
     <app-robot-card [robot]="robot">
       <div class="robot-card-actions">
         <div>
