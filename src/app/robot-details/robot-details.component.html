@@ -2,4 +2,12 @@
   <h1>{{ robot?.name }}</h1>
 
   <app-robot-card [robot]="robot"></app-robot-card>
+
+  <h2>Edit the robot</h2>
+  <form>
+    <label>
+      Robot name
+      <input name="robot-name" [(ngModel)]="robot.name">
+    </label>
+  </form>
 </div>
