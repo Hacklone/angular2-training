@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import 'rxjs/add/operator/map';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RobotListComponent } from './robot-list/robot-list.component';
@@ -9,6 +11,7 @@ import { RobotsService } from './shared/services/robots/robots.service';
 import { ZoomDirective } from './shared/directives/zoom/zoom.directive';
 import { UserContextService } from './shared/services/user-context/user-context.service';
 import { BooksService } from './robot-list/shared/services/books/books.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { BooksService } from './robot-list/shared/services/books/books.service';
     ZoomDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
     RobotsService,

@@ -4,6 +4,7 @@ import { RobotsService } from '../shared/services/robots/robots.service';
 import { UserContextService } from '../shared/services/user-context/user-context.service';
 import { User } from '../shared/models/user.interface';
 import { Subscription } from 'rxjs/Subscription';
+import { BooksService } from './shared/services/books/books.service';
 
 @Component({
   selector: 'app-robot-list',
@@ -14,6 +15,7 @@ export class RobotListComponent implements OnInit {
   private _highestPriceSubscription: Subscription;
 
   constructor(private _robotsService: RobotsService,
+              private _booksService: BooksService,
               private _userContextService: UserContextService) {
 
   }
@@ -46,6 +48,6 @@ export class RobotListComponent implements OnInit {
   }
 
   public async loadBooksForRobotAsync(robot: Robot) {
-
+    await this._booksService.searchForBooksAsync(robot.name);
   }
 }
