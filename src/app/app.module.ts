@@ -37,6 +37,9 @@ import { BooksDialogComponent } from './robot-list/shared/components/books-dialo
     UserContextService,
     BooksService
   ],
+  entryComponents: [
+    BooksDialogComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

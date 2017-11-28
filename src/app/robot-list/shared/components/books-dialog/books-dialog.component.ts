@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
+import { Robot } from '../../../../shared/models/robot.interface';
+import { BooksService } from '../../services/books/books.service';
+import { Book } from '../../services/books/book.interface';
 
 @Component({
   selector: 'app-books-dialog',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public robot: Robot,
+              private _booksService: BooksService) { }
 
-  ngOnInit() {
+  public books: Book[];
+
+  public async ngOnInit() {
+    this.books = await this._booksService.searchForBooksAsync(this.robot.name);
   }
 
 }

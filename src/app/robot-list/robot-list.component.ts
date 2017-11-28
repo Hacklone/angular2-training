@@ -5,7 +5,8 @@ import { UserContextService } from '../shared/services/user-context/user-context
 import { User } from '../shared/models/user.interface';
 import { Subscription } from 'rxjs/Subscription';
 import { BooksService } from './shared/services/books/books.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { BooksDialogComponent } from './shared/components/books-dialog/books-dialog.component';
 
 @Component({
   selector: 'app-robot-list',
@@ -52,6 +53,8 @@ export class RobotListComponent implements OnInit {
   public async loadBooksForRobotAsync(robot: Robot) {
     //const booksAboutRobot = await this._booksService.searchForBooksAsync(robot.name);
 
-    this._dialog.open()
+    this._dialog.open(BooksDialogComponent, <MatDialogConfig<Robot>> {
+      data: robot
+    });
   }
 }

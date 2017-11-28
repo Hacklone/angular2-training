@@ -1,3 +1,20 @@
-<p>
-  books-dialog works!
-</p>
+<div id="books-dialog">
+  <h2>{{ robot.name }}</h2>
+
+  <div>
+    <table class="table table-striped">
+      <tr>
+        <th>Title</th>
+        <th>Cover</th>
+        <th>Authors</th>
+      </tr>
+      <tr *ngFor="let book of books">
+        <td>{{ book.title }}</td>
+        <td>
+          <img *ngIf="book.iconUrl" [src]="book.iconUrl">
+        </td>
+        <td>{{ book.authors }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

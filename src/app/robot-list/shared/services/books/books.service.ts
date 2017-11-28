@@ -14,8 +14,8 @@ export class BooksService {
         return result.items.map((bookItem: any) => {
           return <Book> {
             title: bookItem.volumeInfo.title,
-            author: bookItem.volumeInfo.authors.join(', '),
-            iconUrl: bookItem.volumeInfo.imageLinks.smallThumbnail
+            authors: bookItem.volumeInfo.authors && bookItem.volumeInfo.authors.join(', '),
+            iconUrl: bookItem.volumeInfo.imageLinks && bookItem.volumeInfo.imageLinks.smallThumbnail
           };
         });
       })
