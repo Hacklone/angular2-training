@@ -5,6 +5,7 @@ import { UserContextService } from '../shared/services/user-context/user-context
 import { User } from '../shared/models/user.interface';
 import { Subscription } from 'rxjs/Subscription';
 import { BooksService } from './shared/services/books/books.service';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-robot-list',
@@ -15,6 +16,7 @@ export class RobotListComponent implements OnInit {
   private _highestPriceSubscription: Subscription;
 
   constructor(private _robotsService: RobotsService,
+              private _dialog: MatDialog,
               private _booksService: BooksService,
               private _userContextService: UserContextService) {
 
@@ -48,6 +50,6 @@ export class RobotListComponent implements OnInit {
   }
 
   public async loadBooksForRobotAsync(robot: Robot) {
-    await this._booksService.searchForBooksAsync(robot.name);
+    const booksAboutRobot = await this._booksService.searchForBooksAsync(robot.name);
   }
 }

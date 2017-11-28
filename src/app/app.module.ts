@@ -12,6 +12,8 @@ import { ZoomDirective } from './shared/directives/zoom/zoom.directive';
 import { UserContextService } from './shared/services/user-context/user-context.service';
 import { BooksService } from './robot-list/shared/services/books/books.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+
+    MatDialogModule
   ],
   providers: [
     RobotsService,
