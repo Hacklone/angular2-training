@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Robot } from '../../models/robot.interface';
 import * as Chance from 'chance';
-import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
 
 const chance = new Chance();
 
 @Injectable()
 export class RobotsService {
-  private _robotWithHighestPrice = new Subject<Robot>();
+  private _robotWithHighestPrice = new ReplaySubject<Robot>(1);
   private _robots: Robot[] = [];
 
   constructor() {

@@ -1,4 +1,8 @@
 <div class="container">
+  <div>
+    <h2>Currently logged in user: {{ currentlyLoggedInUser?.name }}</h2>
+  </div>
+
   <h2>Robot with the highest price</h2>
   <div *ngIf="robotWithHighestPrice">
     <app-robot-card [robot]="robotWithHighestPrice"></app-robot-card>
