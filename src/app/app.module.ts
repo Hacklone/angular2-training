@@ -19,7 +19,7 @@ import { OrderRobotsPipe } from './shared/pipes/order-robots/order-robots.pipe';
 import { RobotDetailsComponent } from './robot-details/robot-details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RobotCartComponent } from './robot-cart/robot-cart.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,6 +37,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
 
     MatDialogModule,
