@@ -16,6 +16,9 @@ import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BooksDialogComponent } from './robot-list/shared/components/books-dialog/books-dialog.component';
 import { OrderRobotsPipe } from './shared/pipes/order-robots/order-robots.pipe';
+import { RobotDetailsComponent } from './robot-details/robot-details.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RobotCartComponent } from './robot-cart/robot-cart.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +28,18 @@ import { OrderRobotsPipe } from './shared/pipes/order-robots/order-robots.pipe';
     RobotCardComponent,
     ZoomDirective,
     BooksDialogComponent,
-    OrderRobotsPipe
+    OrderRobotsPipe,
+    RobotDetailsComponent,
+    RobotCartComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
 
-    MatDialogModule
+    MatDialogModule,
+
+    AppRoutingModule
   ],
   providers: [
     RobotsService,
